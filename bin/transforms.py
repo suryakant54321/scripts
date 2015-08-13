@@ -288,7 +288,8 @@ def create_transform(src, dst, transforms,
     except:
         logger.error("Could not open source dataset {0}".format(src))
         raise
-    driver = gdal.GetDriverByName(str(format))
+    #driver = gdal.GetDriverByName(str(format))
+    driver = gdal.GetDriver(1)
 
     # If no output dtype selected, default to input image dtype
     if not dtype:
